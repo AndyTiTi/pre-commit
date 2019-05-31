@@ -75,12 +75,12 @@
   "lint-staged": {
     "**/*.js": [
       "prettier --tab-width 2 --write",
-      "eslint --fix .js",
+      "eslint --fix",
       "git add"
     ],
     "**/*.vue": [
       "prettier --tab-width 2 --write",
-      "eslint --fix .vue",
+      "eslint --fix",
       "git add"
     ]
   }
