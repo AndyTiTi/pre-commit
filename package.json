@@ -5,6 +5,7 @@
   "author": "Pan <panfree23@gmail.com>",
   "license": "MIT",
   "scripts": {
+    "lint-staged": "lint-staged",
     "dev": "vue-cli-service serve",
     "build:prod": "vue-cli-service build",
     "build:stage": "vue-cli-service build --mode staging",
@@ -63,5 +64,20 @@
   "browserslist": [
     "> 1%",
     "last 2 versions"
-  ]
+  ],
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.js": [
+      "eslint --ext .js",
+      "git add"
+    ],
+    "**/*.vue": [
+      "eslint --ext .vue",
+      "git add"
+    ]
+  }
 }
