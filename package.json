@@ -66,13 +66,13 @@
     "> 1%",
     "last 2 versions"
   ],
-  "lint-staged": {
-    "linters": {
-      "*.js": [
-        "eslint --ignore-path .gitignore --fix"
-      ]
-    },
-    "ignore": []
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
   },
-  "pre-commit": "lint"
+  "lint-staged": {
+    "**/*.js": "eslint --ext .js",
+    "**/*.vue": "eslint --ext .vue"
+  }
 }
